@@ -1,45 +1,32 @@
 (function($) {
-    "use strict";
-    
+    "use strict";    
     /*==============================
         Learning
     ==============================*/
     function Learning() {
         var $navListBody = $('.top-nav-list').find('.list-item-body');
         var width = $navListBody.closest('.top-nav-list').width() - 1;
-        $navListBody.width(width);	
-		//Enable swiping...
-		$("body").swipe( {
-			//Generic swipe handler for all directions
+        $navListBody.width(width);
+		$("html").swipe( {
 			swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
 				if(direction=="right")
 				{	
-					if ($("#zel").hasClass('active') == false) {
+					if ($(".outline-learn").hasClass('active') == false) {
 						$('.top-nav-list').children('li').removeClass('active');
 					}
-					$("#zel").toggleClass('active');
+					if ($(".outline-learn").hasClass('active'))$(".outline-learn").toggleClass('active');
 					
 				}
 				else if(direction=="left")
-				{		
-				    
-					if ($("#zel").hasClass('active') == false) {
+				{	
+					if ($(".outline-learn").hasClass('active') == false) {
 						$('.top-nav-list').children('li').removeClass('active');
+						$(".outline-learn").toggleClass('active');
 					}
-					$("#zel").toggleClass('active');
-					
-					
 				}
-				$("#test").text("You swiped " + direction +"\n"+fingerCount);
-				
 			},
 			
 		   threshold:5
-		});
-		
-		$('.outline-learn').click(function() {
-			console.log('clicked', this);
-			
 		});
 
 		
