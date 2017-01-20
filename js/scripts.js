@@ -11,7 +11,7 @@
 			swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
 				if(direction=="right")
 				{	
-					if ($(".outline-learn").hasClass('active') == false) {
+					if (!$(".outline-learn").hasClass('active')) {
 						$('.top-nav-list').children('li').removeClass('active');
 					}
 					if ($(".outline-learn").hasClass('active'))$(".outline-learn").toggleClass('active');
@@ -19,7 +19,7 @@
 				}
 				else if(direction=="left")
 				{	
-					if ($(".outline-learn").hasClass('active') == false) {
+					if (!$(".outline-learn").hasClass('active')) {
 						$('.top-nav-list').children('li').removeClass('active');
 						$(".outline-learn").toggleClass('active');
 					}
@@ -56,8 +56,7 @@
 
     $(document).ready(function() {
         Learning();	        
-    });
-    
+    });  
     
     
 
